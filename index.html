@@ -3,25 +3,32 @@
   <head>
     <script src="jquery.js"></script>
     <script src="data_generator.js"></script>
+    <link rel= "stylesheet" href="styles.css" >
+    <title>TWITTLER</title>
   </head>
   <body>
-    <script>
+    <h1 class='title'>TWITTLER</h1>
 
-      $(document).ready(function(){
-        var $body = $('body');
-        $body.html('');
+    <button class="twittler new_tweets">Click for new tweets</button>
+    <button class="twittler show_tweets">Click for all tweets from all users</button>
+    <button class="twittler hide_tweets">Click to hide all tweets</button>
+    <br/><br/>
 
-        var index = streams.home.length - 1;
-        while(index >= 0){
-          var tweet = streams.home[index];
-          var $tweet = $('<div></div>');
-          $tweet.text('@' + tweet.user + ': ' + tweet.message);
-          $tweet.appendTo($body);
-          index -= 1;
-        }
+    <form>
+      Enter Your Username :
+      <input type='text' class='uName'><br/><br/>
+      Enter Your Tweet :
+      <input type='text' class='myTweet'><br/>
+    </form>
+    <br/>
 
-      });
+    <button class='twittler add_myTweet'>Click to add your tweet</button><br/>
 
-    </script>
+    <h2 class="heading2">Click on my name below to see all my tweets</h2>
+
+    <div class="newTweets"></div>
+    <div class='tweets'></div>
+
+    <script src="application.js"></script>
   </body>
 </html>
